@@ -1,14 +1,15 @@
 package patterns.creational.objectPool;
 
-public abstract class GameObject {
+import patterns.creational.objectPool.interfaces.Poolable;
+
+public abstract class GameObject implements Poolable {
     protected Point2D position = new Point2D();
 
-    public Point2D getPosition() {
-        System.out.printf("Position: %s%n", position);
-        return position;
+    public void printPosition() {
+        System.out.printf("%s, position: %s%n", this, position);
     }
 
     public void setPosition(Point2D newPosition) {
-        this.position = newPosition;
+        position = newPosition;
     }
 }

@@ -4,12 +4,16 @@ import patterns.creational.objectPool.interfaces.Poolable;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.function.Supplier;
 
 public class ObjectPool<T extends Poolable> {
     private BlockingQueue<T> availablePool;
 
-    public ObjectPool() {
+    public ObjectPool(Supplier<T> creator, int count) {
         availablePool = new LinkedBlockingQueue<>();
+        for (int i = 0; i < count; i++) {
+            availablePool.offer(creator.get());
+        }
     }
 
     public T get() {

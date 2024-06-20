@@ -19,3 +19,10 @@ before giving them out.
 * We have to decide whether to create new pooled objects: when pool is empty or to wait
 until an object becomes available. Choice is  influenced by whether the object is tied to
 a fixed number of external resources.
+
+
+#### Real life examples
+
+* Popular pattern in game development - instatiating game object is a costly task; sometimes it's required to
+create many short-lived objects (e.g. bullets in bullet hell games) so it's convenient to use object pool.
+* Example from Java Library: `java.util.concurrent.ThreadPoolExecutor`
