@@ -2,7 +2,7 @@
 
 #### Use Case
 
-* We have a tree structure ob objects, and we want to be able to treat all objects in this hierarchy uniformly.
+* We have a tree structure of objects, and we want to be able to treat all objects in this hierarchy uniformly.
 * This is NOT a simple composition concept from OOP but a further enhancement of this concept.
 
 #### Roles
