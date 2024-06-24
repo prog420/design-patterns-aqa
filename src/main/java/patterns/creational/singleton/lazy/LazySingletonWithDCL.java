@@ -1,7 +1,5 @@
 package patterns.creational.singleton.lazy;
 
-import patterns.creational.abstractFactory.interfaces.Instance;
-
 /**
  * Lazy Singleton with Double-Checked Locking.
  * This implementation solves the multi-threading issue with lazy initialization
