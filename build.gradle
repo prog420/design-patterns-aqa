@@ -12,8 +12,9 @@ repositories {
 
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.9.1')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation "org.junit.jupiter:junit-jupiter"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation "org.apache.commons:commons-text:1.12.0"
 }
 
 test {
