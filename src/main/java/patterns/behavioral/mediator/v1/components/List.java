@@ -9,6 +9,7 @@ import javax.swing.*;
  * Concrete components don't talk with each other. They have only one
  * communication channel - sending requests to the mediator.
  */
+@SuppressWarnings("unchecked")
 public class List extends JList implements Component {
     private Mediator mediator;
     private final DefaultListModel LIST_MODEL;
