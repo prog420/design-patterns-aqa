@@ -32,6 +32,8 @@ public class MoveCommand implements Command {
     }
 
     public void stop(int x, int y) {
+        endX = x;
+        endY = y;
         for (Shape child : editor.getShapes().getSelected()) {
             child.drop();
         }
