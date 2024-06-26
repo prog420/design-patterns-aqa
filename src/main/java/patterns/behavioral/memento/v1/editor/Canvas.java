@@ -10,7 +10,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
 
-public class Canvas extends java.awt.Canvas {
+class Canvas extends java.awt.Canvas {
     private Editor editor;
     private JFrame frame;
     private static final int PADDING = 10;
@@ -18,6 +18,9 @@ public class Canvas extends java.awt.Canvas {
     Canvas(Editor editor) {
         this.editor = editor;
         createFrame();
+        attachKeyboardListeners();
+        attachMouseListeners();
+        refresh();
     }
 
     private void createFrame() {
@@ -45,12 +48,12 @@ public class Canvas extends java.awt.Canvas {
             public void keyPressed(KeyEvent e) {
                 if ((e.getModifiers() & KeyEvent.CTRL_MASK) != 0) {
                     switch (e.getKeyCode()) {
-                        case KeyEvent.VK_Z -> {
+                        case KeyEvent.VK_Z:
                             editor.undo();
-                        }
-                        case KeyEvent.VK_R -> {
+                            break;
+                        case KeyEvent.VK_R:
                             editor.redo();
-                        }
+                            break;
                     }
                 }
             }
